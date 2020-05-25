@@ -16,19 +16,19 @@ class GameArea extends React.Component {
       };
 
     moveup() {
-        mainCharacter.y -= 10;
+        mainCharacter.moveYUp();
     }
 
     moveleft() {
-        mainCharacter.x -= 10;
+        mainCharacter.moveXLeft();
     }
 
     moveright() {
-        mainCharacter.x += 10;
+        mainCharacter.moveXRight();
     }
 
     movedown() {
-        mainCharacter.y += 10;
+        mainCharacter.moveYDown();
     }
 
     componentDidUpdate() {
@@ -46,7 +46,7 @@ class GameArea extends React.Component {
       ctx.fillStyle = '#bbffff';;
       ctx.fillRect(x_axis, y_axis, width, height);
       //document.body.insertBefore(canvas, document.body.childNodes[0]);
-      this.createMainFrog(ctx, mainCharacter.width, mainCharacter.height, "green", mainCharacter.x, mainCharacter.y);
+      this.createMainFrog(ctx, 50, 50, "green", mainCharacter.getX(), mainCharacter.getY());
       ctx.restore();
     }
     
