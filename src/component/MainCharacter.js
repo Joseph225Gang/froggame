@@ -16,7 +16,7 @@ function MakeFrog(){
     }
 
     this.moveXRight = () =>{
-        if(x <510)
+        if(x < 510)
             x += 10;
     }
 
@@ -32,6 +32,14 @@ function MakeFrog(){
     }
 }
 
+export class myObstacle{
+    constructor(x,y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+}
+
 export let mainCharacter = new MakeFrog();
 
-export default mainCharacter;
+export default {mainCharacter, myObstacle};
