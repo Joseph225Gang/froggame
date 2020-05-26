@@ -59,10 +59,10 @@ class GameArea extends React.Component {
       ctx.fillStyle = '#bbffff';
       ctx.fillRect(x_axis, y_axis, width, height);
       //document.body.insertBefore(canvas, document.body.childNodes[0]);
-      this.createComponent(ctx, this.particle.size,this.particle.size, "green", mainCharacter.getX(), mainCharacter.getY());
+      this.createComponent(ctx, this.particle.size,this.particle.size, mainCharacter.getColor(), mainCharacter.getX(), mainCharacter.getY());
       
       this.obstacles.forEach((item) => {
-          this.createComponent(ctx, this.particle.size, this.particle.size, item.x <= 0 ? 'white' : 'blue', item.x <= 0 ? item.x : item.x--, item.y);
+          this.createComponent(ctx, this.particle.size, this.particle.size, item.getColor(), item.moveLeft(), item.y);
       });
       ctx.restore();
     }

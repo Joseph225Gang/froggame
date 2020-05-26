@@ -1,14 +1,13 @@
 function MakeFrog(){
+    let color = 'green';
     let x = 250;
     let y = 270;
 
-    this.getX = () => {
-        return x;
-    }
+    this.getColor = () => color;
 
-    this.getY = () =>{
-        return y;
-    }
+    this.getX = () => x;
+
+    this.getY = () => y;
 
     this.moveXLeft = () =>{
         if( x > 30)
@@ -38,6 +37,10 @@ export class myObstacle{
         this.x = x;
         this.y = y;
     }
+
+    moveLeft = () => this.x > 0 ? --this.x : this.x;
+
+    getColor = () => this.x > 0 ? 'blue' : 'white';
 }
 
 export let mainCharacter = new MakeFrog();
